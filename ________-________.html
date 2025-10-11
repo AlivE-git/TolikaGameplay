@@ -341,7 +341,10 @@ ${i}`),b(i)}function $e(n,e=!1){return Ko(zo(n),An(),Pn(),e)}class Yo extends fe
 
 [[Нажать на случайную кнопку-&gt;Квест-Коля.3]]</tw-passagedata><tw-passagedata pid="5" name="Вагон Лёши" tags="" position="7250,775" size="100,100">ЛЁХА! НУ, УДАЧИ!!!!!
 
-[[Финал-&gt;Финал]]</tw-passagedata><tw-passagedata pid="6" name="Вагон Паши" tags="" position="3925,650" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/Pasha.png&quot; style=&quot;display:block; margin:auto;&quot; width=&quot;500&quot;&gt;
+[[Финал-&gt;Финал]]</tw-passagedata><tw-passagedata pid="6" name="Вагон Паши" tags="" position="3925,650" size="100,100">lives:3
+score:0
+--
+&lt;img src=&quot;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/Pasha.png&quot; style=&quot;display:block; margin:auto;&quot; width=&quot;500&quot;&gt;
 
 Дверь в вагон отъезжает в сторону — и ты будто шаг делаешь внутрь старой консоли. Воздух становится суше и теплее; где-то глубоко гудят кулеры, мерно, как сердце машины. Свет меняется: вместо факелов — холодные прямоугольники экранов, зелёные строки бегут по ним каскадами, складываются в слова и распадаются на символы. Пол под ногами полупрозрачный; под ним тянутся кабели, как корни, и редкие огоньки мигают в такт движению поезда.
 
@@ -888,7 +891,7 @@ ${i}`),b(i)}function $e(n,e=!1){return Ko(zo(n),An(),Pn(),e)}class Yo extends fe
 Впереди зияет пропасть: чёрный провал, где исчезают линии сетки. На дне мерцают шипы, похожие на курсоры, зависшие в ожидании.
 
 [[Врезаться в бой, ударить его-&gt;RunnerFight]]
-[[Развернуться и бежать прочь-&gt;RunnerChase]]</tw-passagedata><tw-passagedata pid="48" name="Dungeon1" tags="" position="4150,625" size="100,100">аменные стены складываются из серых блоков с чёткими гранями.
+[[Развернуться и бежать прочь-&gt;RunnerChase]]</tw-passagedata><tw-passagedata pid="48" name="Dungeon1" tags="" position="4150,625" size="100,100">Каменные стены складываются из серых блоков с чёткими гранями.
 Факелы не горят — они переливаются жёлтыми квадратами, и каждый мигает с лёгкой задержкой, как неудачный gif.
 Перед тобой три коридора, похожие на строки кода, уходящие вглубь.
 
@@ -902,19 +905,22 @@ ${i}`),b(i)}function $e(n,e=!1){return Ko(zo(n),An(),Pn(),e)}class Yo extends fe
 За вратами грохочет дыхание, как раскалённый процессор.
 
 [[Шагнуть навстречу-&gt;BossFight]]
-[[Шагнуть навстречу-&gt;BossHide]]</tw-passagedata><tw-passagedata pid="50" name="RunnerFight" tags="" position="4500,850" size="100,100">Ты бьёшь волка, и тот разлетается на квадраты — словно кто-то нажал «Delete».
+[[Спрятатсья -&gt;BossHide]]</tw-passagedata><tw-passagedata pid="50" name="RunnerFight" tags="" position="4500,850" size="100,100">score: score + 100
+--
+Ты бьёшь волка, и тот разлетается на квадраты — словно кто-то нажал «Delete».
 На экране вспыхивает: +100 SCORE
-(set: $score to $score + 100)
 Лес рассеивается, и перед тобой открывается портал.
 
-[[Шагнуть в портал-&gt;Boss]]</tw-passagedata><tw-passagedata pid="51" name="RunnerChase" tags="" position="4475,975" size="100,100">Ты бросаешься бежать, но фон под ногами ускоряется. Волк нагоняет тебя и вцепляется в ногу, его зубы — это красные «Х».
+[[Шагнуть в портал-&gt;Boss]]</tw-passagedata><tw-passagedata pid="51" name="RunnerChase" tags="" position="4475,975" size="100,100">lives: lives - 1
+--
+Ты бросаешься бежать, но фон под ногами ускоряется. Волк нагоняет тебя и вцепляется в ногу, его зубы — это красные «Х».
 Экран моргает. -1 жизнь.
 
-(set: $lives to $lives - 1)
+[if lives &gt; 0]
+[[Собраться и сразиться-&gt;RunnerFight]]
 
-Если $lives &gt; 0 → [[Собраться и сразиться-&gt;RunnerFight]]
-
-Иначе → [[GAME OVER-&gt;GameOver]]</tw-passagedata><tw-passagedata pid="52" name="GameOver" tags="" position="4825,850" size="100,100">Всё рушится. Пиксельные деревья растворяются, дракон рассыпается пеплом символов, а шипы под ногами становятся строками кода.
+[else]
+[[GAME OVER-&gt;GameOver]]</tw-passagedata><tw-passagedata pid="52" name="GameOver" tags="" position="4825,850" size="100,100">Всё рушится. Пиксельные деревья растворяются, дракон рассыпается пеплом символов, а шипы под ногами становятся строками кода.
 
 Последнее, что ты видишь, — это курсор в углу экрана, мигающий, будто пульс. Он застывает… и вместе с ним замирает звук.
 
@@ -924,35 +930,41 @@ ${i}`),b(i)}function $e(n,e=!1){return Ko(zo(n),An(),Pn(),e)}class Yo extends fe
 — Ничего страшного. Каждая смерть — это шаг к победе.
 
  * [[«Классная демка. А теперь — где выход из неё?»-&gt;Вагон Кати]]
- * [[«Похоже, я всё ещё в пути…»-&gt;Вагон Кати]]</tw-passagedata><tw-passagedata pid="53" name="DungeonTrap" tags="" position="4400,700" size="100,100">Ты идёшь налево.
+ * [[«Похоже, я всё ещё в пути…»-&gt;Вагон Кати]]</tw-passagedata><tw-passagedata pid="53" name="DungeonTrap" tags="" position="4400,700" size="100,100">lives: lives - 1
+--
+Ты идёшь налево.
 Вдруг из стены вылетает копьё, но оно не стальное, а пиксельное — состоит из рядов серых квадратиков. Оно проходит сквозь тебя, и всё внутри экрана дёргается.
 -1 жизнь.
 
-(set: $lives to $lives - 1)
+[if lives &gt; 0]
+[[Вернуться к развилке-&gt;Dungeon1]]
 
-Если $lives &gt; 0 → [[Вернуться к развилке-&gt;Dungeon1]]
-
-Иначе → [[GAME OVER-&gt;GameOver]]</tw-passagedata><tw-passagedata pid="54" name="DungeonChest" tags="" position="4325,600" size="100,100">В нише стоит сундук. Ты открываешь его — и изнутри льётся свет, как из старого телевизора без сигнала.
+[else]
+[[GAME OVER-&gt;GameOver]]</tw-passagedata><tw-passagedata pid="54" name="DungeonChest" tags="" position="4325,600" size="100,100">lives: lives + 1
+--
+В нише стоит сундук. Ты открываешь его — и изнутри льётся свет, как из старого телевизора без сигнала.
 Внутри лежит сердце, пульсирующее квадратиками. Оно сливается с твоей грудью.
 +1 жизнь.
 
-(set: $lives to $lives + 1)
-[[Дальше-&gt;Boss]]</tw-passagedata><tw-passagedata pid="55" name="BossFight" tags="" position="4650,575" size="100,100">Ты бросаешься в бой. Каждый удар превращает часть дракона в россыпь символов: «█▒▓».
+[[Дальше-&gt;Boss]]</tw-passagedata><tw-passagedata pid="55" name="BossFight" tags="" position="4650,575" size="100,100">score: score + 500
+--
+Ты бросаешься в бой. Каждый удар превращает часть дракона в россыпь символов: «█▒▓».
 Его рёв звучит как перегоревшая аудиокассета, но вскоре он распадается на фейерверк пикселей.
 На экране вспыхивает: +500 SCORE
-(set: $score to $score + 500)
 
-[[Финал-&gt;Ending]]</tw-passagedata><tw-passagedata pid="56" name="BossHide" tags="" position="4600,700" size="100,100">Ты прячешься, но дракон видит всё: его курсоры цепляют тебя.
+[[Финал-&gt;Ending]]</tw-passagedata><tw-passagedata pid="56" name="BossHide" tags="" position="4600,700" size="100,100">lives: lives - 1
+--
+Ты прячешься, но дракон видит всё: его курсоры цепляют тебя.
 Он изрыгает поток огня — оранжевых «!» и «#». Экран дёргается. -1 жизнь.
 
-(set: $lives to $lives - 1)
+[if lives &gt; 0]
+[[Собраться и сразиться-&gt;BossFight]]
 
-Если $lives &gt; 0 → [[Собраться и сразиться-&gt;BossFight]]
-
-Иначе → [[GAME OVER-&gt;GameOver]]</tw-passagedata><tw-passagedata pid="57" name="Ending" tags="" position="4825,700" size="100,100">Мир начинает таять. Лес, подземелья, дракон — всё растворяется, как код при выключении питания.
+[else]
+[[GAME OVER-&gt;GameOver]]</tw-passagedata><tw-passagedata pid="57" name="Ending" tags="" position="4825,700" size="100,100">Мир начинает таять. Лес, подземелья, дракон — всё растворяется, как код при выключении питания.
 На чёрном фоне вспыхивает: CONGRATULATIONS!
-Твои очки: $score
-Жизни: $lives
+Твои очки: {score}
+Жизни: {lives}
 
 И вдруг — мягкий свет, запах чая. Ты снова в вагоне. Паша сидит напротив, креветка в колбе сияет тепло-розовым, а на столе ждёт кружка.
 «Ну как тебе игра?» — он улыбается, будто ничего и не произошло.
