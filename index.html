@@ -795,7 +795,10 @@ score:0
 — &quot;Прошу. Поезд ждёт. Мы уходим, как только ты сделаешь первый шаг.&quot;
 
 * [[Пойти в головной вагон.-&gt;Вагон Коли]]
-* [[Нет уж. Сегодня без трипов.-&gt;Финал: Какой странный сон]]</tw-passagedata><tw-passagedata pid="38" name="Пролог" tags="" position="200,600" size="100,100">Ты работаешь из дома. Но действительно дома себя уже давно не чувствовал.
+* [[Нет уж. Сегодня без трипов.-&gt;Финал: Какой странный сон]]</tw-passagedata><tw-passagedata pid="38" name="Пролог" tags="" position="200,600" size="100,100">sound.effect.explosion.url: &#39;https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/refs/heads/master/sample.mp3&#39;
+--
+{sound effect: &#39;explosion&#39;}
+Ты работаешь из дома. Но действительно дома себя уже давно не чувствовал.
 
 Кажется, прошло всего несколько часов, но за окном уже второй раз заходит солнце.  
 На экране — десятки окон. Каждое просит внимания, каждый чат горит красным.  
@@ -1440,6 +1443,15 @@ score:0
 Последний выдох — чуть дольше.  
 Ты гасишь сигарету о железный поручень. Пепел осыпается вниз и исчезает.  
 
-[[Выбросить окурок и пойти дальше-&gt;Вагон Лёши]]  </tw-passagedata><tw-passagedata pid="95" name="Рик" tags="" position="1300,1025" size="100,100">&lt;div style=&quot;text-align: center;&quot;&gt;
+[[Выбросить окурок и пойти дальше-&gt;Вагон Лёши]]  </tw-passagedata><tw-passagedata pid="95" name="DungeonChest" tags="" position="4325,600" size="100,100">lives: lives + 1
+--
+В нише стоит сундук. Ты открываешь его — и изнутри льётся свет, как из старого телевизора без сигнала.
+Внутри лежит сердце, пульсирующее квадратиками. Оно сливается с твоей грудью.
++1 жизнь.
+
+[[Дальше-&gt;Boss]]</tw-passagedata><tw-passagedata pid="96" name="Рик" tags="" position="1300,1025" size="100,100">&lt;div style=&quot;text-align: center;&quot;&gt;
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/ru/6/61/Rickrolling.gif&quot; alt=&quot;GIF&quot; width=&quot;400&quot;&gt;
-&lt;/div&gt;</tw-passagedata></tw-storydata></html>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="Инструкция" tags="" position="300,775" size="100,100">{{button &quot;Начать&quot; [
+    set _music to (Audio.play(&quot;https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/refs/heads/master/sample.mp3&quot;))
+    goto &quot;Введение&quot;
+]}}</tw-passagedata></tw-storydata></html>
