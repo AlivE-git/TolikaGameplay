@@ -275,6 +275,7 @@ sound.effect.music.playing: true
 * [[Съесть печенье у него со стола-&gt;Квест-Женя.3]]</tw-passagedata><tw-passagedata pid="3" name="Вагон Кати" tags="" position="5150,775" size="100,100">sound.effect.music.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/katya_start.mp3&#39;
 sound.effect.music.playing: false
 sound.effect.music.playing: true
+sound.effect.music2.playing: false
 --
 {sound effect: &#39;music&#39;}
 &lt;img src=&quot;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/Katya.png&quot; style=&quot;display:block; margin:auto;&quot; width=&quot;1000&quot;&gt;
@@ -383,6 +384,7 @@ sound.effect.music.playing: true
 * [[Нажать на случайную кнопку-&gt;Квест-Коля.3]]</tw-passagedata><tw-passagedata pid="5" name="Вагон Лёши" tags="" position="7250,775" size="100,100">ЛЁХА! НУ, УДАЧИ!!!!!
 
 * [[Финал-&gt;Финал]]</tw-passagedata><tw-passagedata pid="6" name="Вагон Паши" tags="" position="3925,650" size="100,100">sound.effect.music.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/pasha_start.mp3&#39;
+sound.effect.music2.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/pasha_game.mp3&#39;
 sound.effect.music.playing: false
 sound.effect.music.playing: true
 tmp: 0
@@ -964,26 +966,23 @@ Firefox:
 *Был ли это сон? Или начало чего-то по-настоящему важного?*
 
 * [[&quot;О, что-то пришло на телефон &quot;-&gt;Рик]]</tw-passagedata><tw-passagedata pid="47" name="Level1" tags="" position="4100,750" size="100,100">sound.effect.music.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/pasha_game.mp3&#39;
+sound.effect.music.playing: false
 tmp: tmp + 1
 --
-[if tmp &lt; 1]
-{sound effect: &#39;music&#39;}
-{sound.effect.music.playing: false}
-{sound.effect.music.playing: true}
+[if tmp &lt; 2]
+{sound effect: &#39;music2&#39;}
 [continue]
-
 Экран дрожит, и ты оказываешься на узкой дорожке. Лес вокруг состоит из одинаковых зелёных квадратов, будто художник торопился и штамповал деревья копипастой. Ветер свистит восьмибитной мелодией, а земля под ногами слегка вибрирует, как движущаяся лента.
 Впереди зияет пропасть: чёрный провал, где исчезают линии сетки. На дне мерцают шипы, похожие на курсоры, зависшие в ожидании.
 
 * [[Врезаться в бой, ударить его-&gt;RunnerFight]]
 
 * [[Развернуться и бежать прочь-&gt;RunnerChase]]</tw-passagedata><tw-passagedata pid="48" name="Dungeon1" tags="" position="4150,625" size="100,100">sound.effect.music.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/pasha_game.mp3&#39;
+sound.effect.music.playing: false
 tmp: tmp + 1
 --
-[if tmp &lt; 1]
-{sound effect: &#39;music&#39;}
-{sound.effect.music.playing: false}
-{sound.effect.music.playing: true}
+[if tmp &lt; 2]
+{sound effect: &#39;music2&#39;}
 [continue]
 Каменные стены складываются из серых блоков с чёткими гранями.
 Факелы не горят — они переливаются жёлтыми квадратами, и каждый мигает с лёгкой задержкой, как неудачный gif.
@@ -995,12 +994,11 @@ tmp: tmp + 1
 * [[Пойти направо, где мерцает свет-&gt;DungeonChest]]
 
 * [[Идти прямо, в самую тьму-&gt;Boss]]</tw-passagedata><tw-passagedata pid="49" name="Boss" tags="" position="4425,475" size="100,100">sound.effect.music.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/pasha_game.mp3&#39;
+sound.effect.music.playing: false
 tmp: tmp + 1
 --
-[if tmp &lt; 1]
-{sound effect: &#39;music&#39;}
-{sound.effect.music.playing: false}
-{sound.effect.music.playing: true}
+[if tmp &lt; 2]
+{sound effect: &#39;music2&#39;}
 [continue]
 Экран не тратит время на подготовку — сразу вспыхивает алым светом.
 Ты стоишь перед гигантскими вратами. По ним бегут строки кода, складываются в символ дракона.
