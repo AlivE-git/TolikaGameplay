@@ -1431,7 +1431,9 @@ points: (book1 + book2 + book3 === 1) ? points + 1 : points + 0
 — Сладкое — это не сахар. Это момент, когда ты не хочешь ничего менять.  
 Коты согласны. Один мягко касается твоей ладони хвостом.  
 
-* [[Поблагодарить-&gt;Квест-Женя.СонФинал]]</tw-passagedata><tw-passagedata pid="82" name="Квест-Женя.СонФинал" tags="" position="6925,925" size="100,100">Поезд гудит где-то глубоко, будто мурчит вместе с ними.  
+* [[Поблагодарить-&gt;Квест-Женя.СонФинал]]</tw-passagedata><tw-passagedata pid="82" name="Квест-Женя.СонФинал" tags="" position="6925,925" size="100,100">last_siga: 1
+--
+Поезд гудит где-то глубоко, будто мурчит вместе с ними.  
 
 Женя, не открывая глаз, шепчет:  
 — Видишь, всё просто. Коты — лучшие хранители снов.  
@@ -1706,8 +1708,7 @@ sound.effect.kurit.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaG
 12345-12345-12345
 
 &lt;img src=&quot;https://raw.githubusercontent.com/AlivE-git/TolikaGameplay/refs/heads/main/media/all.png&quot; style=&quot;display:block; margin:auto;&quot; width=&quot;500&quot;&gt;
-</tw-passagedata><tw-passagedata pid="98" name="Финальный перекур1" tags="" position="7225,925" size="100,100">last_siga: 1
---
+</tw-passagedata><tw-passagedata pid="98" name="Финальный перекур1" tags="" position="7225,925" size="100,100">
 Ты достаёшь последнюю сигарету — смятую, немного влажную от кармана.  
 Зажигалка долго не хочет загораться, будто сама тянет время.  
 
@@ -1784,8 +1785,8 @@ sound.effect.kurit.url: &#39;https://raw.githubusercontent.com/AlivE-git/TolikaG
 В вагоне вновь слышится щёлканье льда в шейкере, джаз на заднем фоне, и кажется, что весь мир сжимается до размеров этой маленькой, странной сигареты.
 
 * [[Взять предложенную сигарету и покурить-&gt;Вагон Лёши.Бар-4]]
-[if last_siga === 1]
-* [[Отказаться, достать свою сигарету и покурить (если они есть)-&gt;Вагон Лёши.Бар-5]]
+[if last_siga === 0]
+* [[Отказаться, достать свою сигарету и покурить-&gt;Вагон Лёши.Бар-5]]
 [continue]
 * [[Не хочу курить-&gt;Вагон Лёши.Бар-6]]</tw-passagedata><tw-passagedata pid="103" name="Вагон Лёши.Бар-4" tags="" position="7875,925" size="100,100">points: points + 1
 --
